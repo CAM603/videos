@@ -1,9 +1,13 @@
 import React from 'react';
+import VideoItem from './VideoItem';
 
 const VideoList = (props) => {
-    const {videos} = props
+    const {videos} = props;
+    const renderedList = videos.map(video => {
+        return <VideoItem video={video}/>
+    });
     return (
-        <div>{videos.length}</div>
+        <div className="ui relaxed divided list">{renderedList}</div>
     )
 };
 export default VideoList;
